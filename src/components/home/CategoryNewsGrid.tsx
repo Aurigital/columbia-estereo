@@ -8,6 +8,7 @@ import Link from 'next/link';
 
 interface CategoryNewsGridProps {
   title: string;
+  subtitle?: string;
   tagSlug?: string;
   maxPosts?: number;
   showLoadMore?: boolean;
@@ -18,6 +19,7 @@ interface CategoryNewsGridProps {
 
 export default function CategoryNewsGrid({
   title,
+  subtitle,
   tagSlug,
   showLoadMore = true,
   showCategories = false,
@@ -35,7 +37,7 @@ export default function CategoryNewsGrid({
   const [categories, setCategories] = useState<WordPressCategory[]>([]);
   const [selectedCategory, setSelectedCategory] = useState('todas');
 
-  const POSTS_PER_PAGE = 4;
+  const POSTS_PER_PAGE = 5;
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -190,13 +192,13 @@ export default function CategoryNewsGrid({
       <div className="flex-1 px-8">
         <div className="flex flex-col items-center justify-center min-h-[400px] text-center max-w-7xl mx-auto">
           <div className="rounded-lg p-6 max-w-md">
-            <h3 className="text-lg font-semibold text-[#D92A34] mb-2">
+            <h3 className="text-lg font-semibold text-[#1B1B1B] mb-2">
               Error al cargar noticias
             </h3>
-            <p className="text-[#FFFFFF]/60 mb-4">{error}</p>
+            <p className="text-[#1B1B1B]/80 mb-4">{error}</p>
             <button
               onClick={handleRetry}
-              className="text-[#D92A34] border border-[#D92A34] px-4 py-2 rounded-md hover:text-white hover:bg-[#D92A34] transition-colors duration-300"
+              className="text-[#717171] border border-[#D4D5DD] px-4 py-2 rounded-md hover:scale-105 transition-all duration-300"
               >
               Reintentar
             </button>
@@ -207,15 +209,16 @@ export default function CategoryNewsGrid({
   }
 
   return (
-    <div className="bg-[#000000] my-4">
+    <div className="">
       <div className="max-w-7xl mx-auto px-4 sm:px-8 py-8">
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-2">
           <div className="w-full">
-            <div className="flex items-center justify-between mb-2">
-              <div className="flex flex-col gap-2">
-                <h2 className="font-semibold text-lg md:text-2xl text-[#FFFFFF]/80">{title}</h2>
+            <div className="flex items-center justify-between mb-2 border-b border-[#1B1B1B]/30 pb-2">
+              <div className="flex flex-col gap-1">
+                <h2 className="font-bold text-lg md:text-2xl lg:text-3xl text-[#1B1B1B]">{title}</h2>
+                <p className="text-sm md:text-base text-[#1B1B1B]/60 hidden md:block"> {subtitle}</p>
               </div>
-              <Link href="/news" className="hover:border-[#D92A34] hover:text-[#FFFFFF]/80 text-[#FFFFFF]/60 bg-[#FFFFFF]/5 border border-[#FFFFFF]/15 rounded-md px-2 py-1 md:px-4 md:py-2 hover:bg-[#D92A34] text-xs md:text-sm flex items-center transition-all duration-300">
+              <Link href="/news" className="text-[#717171] border border-[#D4D5DD] rounded-full px-2 py-1 md:px-4 md:py-2 text-xs md:text-sm flex items-center hover:scale-105 transition-all duration-300">
                 Ver todas <span aria-hidden>→</span>
               </Link>
             </div>
@@ -223,44 +226,83 @@ export default function CategoryNewsGrid({
         </div>
 
         {loading && posts.length === 0 && (
-          <div className={`grid ${
-            cardType === 'grid' 
-              ? 'grid-cols-1 space-y-4' 
-              : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6'
-          }`}>
-            {Array.from({ length: POSTS_PER_PAGE }).map((_, index) => (
-              <div key={index} className="animate-pulse">
-                {cardType === 'grid' ? (
-                  <div className="bg-[#FFFFFF]/5 h-32 rounded-sm"></div>
-                ) : (
-                  <>
-                    <div className="bg-[#FFFFFF]/5 aspect-[16/11] rounded-sm mb-4"></div>
-                    <div className="h-4 bg-[#FFFFFF]/5 rounded mb-2"></div>
-                    <div className="h-4 bg-[#FFFFFF]/5 rounded w-2/3"></div>
-                  </>
-                )}
+          <>
+            {cardType === 'grid' ? (
+              <div className="grid grid-cols-1 space-y-4">
+                {Array.from({ length: POSTS_PER_PAGE }).map((_, index) => (
+                  <div key={index} className="animate-pulse">
+                    <div className="bg-[#FFFFFF]/5 h-32 rounded-sm"></div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            ) : (
+              <div className="space-y-4 sm:space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                  {Array.from({ length: 2 }).map((_, index) => (
+                    <div key={index} className="animate-pulse">
+                      <div className="bg-[#FFFFFF]/5 aspect-[16/11] rounded-sm mb-4"></div>
+                      <div className="h-4 bg-[#FFFFFF]/5 rounded mb-2"></div>
+                      <div className="h-4 bg-[#FFFFFF]/5 rounded w-2/3"></div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                  {Array.from({ length: 3 }).map((_, index) => (
+                    <div key={index + 2} className="animate-pulse">
+                      <div className="bg-[#FFFFFF]/5 aspect-[16/11] rounded-sm mb-4"></div>
+                      <div className="h-4 bg-[#FFFFFF]/5 rounded mb-2"></div>
+                      <div className="h-4 bg-[#FFFFFF]/5 rounded w-2/3"></div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </>
         )}
 
         {posts.length > 0 && (
           <>
-            <div className={`grid  ${
-              cardType === 'grid' 
-                ? 'grid-cols-1' 
-                : 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6'
-            }`}>
-              {posts.map((post) => (
-                <NewsCard key={post.id} post={post} />
-              ))}
-            </div>
+            {cardType === 'grid' ? (
+              <div className="grid grid-cols-1">
+                {posts.map((post) => (
+                  <NewsCard key={post.id} post={post} />
+                ))}
+              </div>
+            ) : (
+              <div className="space-y-4 sm:space-y-6">
+                {Array.from({ length: Math.ceil(posts.length / 5) }).map((_, groupIndex) => {
+                  const startIndex = groupIndex * 5;
+                  const groupPosts = posts.slice(startIndex, startIndex + 5);
+
+                  return (
+                    <div key={groupIndex} className="space-y-4 sm:space-y-6">
+                      {groupPosts.slice(0, 2).length > 0 && (
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 [&_article>div:first-child]:!aspect-[16/9]">
+                          {groupPosts.slice(0, 2).map((post) => (
+                            <NewsCard key={post.id} post={post} />
+                          ))}
+                        </div>
+                      )}
+
+                      {groupPosts.slice(2, 5).length > 0 && (
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                          {groupPosts.slice(2, 5).map((post) => (
+                            <NewsCard key={post.id} post={post} />
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            )}
 
             {hasMore && !loading && showLoadMore && (
               <div className="text-center mt-8">
                 <button
                   onClick={handleLoadMore}
-                  className="text-[#D92A34] border border-[#D92A34] px-4 py-2 rounded-md hover:text-white hover:bg-[#D92A34] transition-colors duration-300"
+                  className="text-[#717171] border border-[#D4D5DD] px-4 py-2 rounded-md hover:scale-105 transition-all duration-300"
                 >
                   Cargar más noticias
                 </button>
@@ -271,7 +313,7 @@ export default function CategoryNewsGrid({
 
         {!loading && posts.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-[#FFFFFF]/60 text-lg">
+            <p className="text-[#1B1B1B] text-lg">
               No se encontraron noticias en esta categoría
             </p>
           </div>

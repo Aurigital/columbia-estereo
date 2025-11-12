@@ -1,0 +1,31 @@
+{
+  "name": "Radio2",
+  "short_name": "Radio2",
+  "description": "La nueva era de la radio digital en Costa Rica. Música, noticias y entretenimiento con una perspectiva moderna y dinámica.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F8FBFF",
+  "theme_color": "#1E305F",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/LogoRadio2.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["news", "music", "entertainment", "digital media"],
+  "lang": "es-CR",
+  "dir": "ltr"
+} 

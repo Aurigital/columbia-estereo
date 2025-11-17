@@ -203,7 +203,7 @@ const RadioPlayer = () => {
     playerState.currentIndex > 0;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-[#D92A34] text-white z-50">
+    <div className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-[#D90043] to-[#FFB700] text-white z-50">
       <audio
         ref={audioRef}
         preload="none"
@@ -343,7 +343,7 @@ const RadioPlayer = () => {
               step="0.1"
               value={isMuted ? 0 : volume}
               onChange={handleVolumeChange}
-              className="w-full h-1 bg-gray-600 rounded-lg appearance-none cursor-pointer radio-volume-slider"
+              className="w-full h-1 bg-white/30 rounded-lg appearance-none cursor-pointer radio-volume-slider"
               style={getVolumeBackground()}
               title={`Volumen: ${Math.round((isMuted ? 0 : volume) * 100)}%`}
             />

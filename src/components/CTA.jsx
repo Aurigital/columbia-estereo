@@ -3,9 +3,10 @@ import Link from 'next/link';
 const CTA = () => {
     return (
         <section className="text-white py-12 lg:py-16 mx-auto max-w-7xl px-4 sm:px-8">
-        <div className="md:px-12 px-6 py-12 sm:py-16 relative rounded-2xl overflow-hidden h-[500px] flex items-center" data-aos="fade-up">
+        <div className="md:px-12 px-6 py-12 sm:py-16 relative rounded-2xl overflow-hidden h-[500px] flex items-start md:items-center" data-aos="fade-up">
             <div className="absolute inset-0 w-full h-full z-0">
-                <img src="/assets/CTA2.avif" alt="cta-bg" className="w-full h-full object-cover" />
+                <img src="/assets/CTA.avif" alt="cta-bg" className="w-full h-full object-cover hidden md:block" />
+                <img src="/assets/CTAM.png" alt="cta-bg" className="w-full h-full object-cover block md:hidden" />
             </div>
 
             <div className="relative z-10">

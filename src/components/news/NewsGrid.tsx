@@ -3,7 +3,6 @@
 
 import { useState, useEffect, useContext, useCallback, useRef } from 'react';
 import NewsCard from '../UI/NewsCard';
-import { IoFilter } from 'react-icons/io5';
 import { SearchContext } from '@/lib/SearchContext';
 import WordPressService from '@/lib/wordpressService';
 import { WordPressPost, FilterData, WordPressCategory } from '@/types/wordpress';
@@ -158,13 +157,13 @@ export default function NewsGrid({ filters, onOpenFilters, title = 'Noticias', p
       <div className="flex-1 px-8">
         <div className="flex flex-col items-center justify-center min-h-[400px] text-center max-w-7xl mx-auto">
           <div className="rounded-lg p-6 max-w-md">
-            <h3 className="text-lg font-semibold text-[#D51F2F] mb-2">
+            <h3 className="text-lg font-semibold text-[#1B1B1B] mb-2">
               Error al cargar noticias
             </h3>
-            <p className="text-[#C7C7C7] mb-4">{error}</p>
+            <p className="text-[#1B1B1B]/80 mb-4">{error}</p>
             <button
               onClick={handleRetry}
-              className="text-[#D92A34] border border-[#D92A34] px-4 py-2 rounded-md hover:text-white hover:bg-[#D92A34] transition-colors duration-300"
+              className="text-[#717171] border border-[#D4D5DD] px-4 py-2 rounded-md hover:scale-105 transition-all duration-300"
               >
               Reintentar
             </button>
@@ -175,27 +174,20 @@ export default function NewsGrid({ filters, onOpenFilters, title = 'Noticias', p
   }
 
   return (
-    <div className="bg-[#000000]">
-      <div className="max-w-7xl mx-auto">
+    <div className="">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-8">
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-2">
           <div className="w-full">
-            <div className="flex items-center justify-between mb-2">
-              <div className="flex flex-col gap-2">
-                <h2 className="font-semibold text-lg md:text-2xl text-[#FFFFFF]/80">{title}</h2>
-                <p className="text-sm text-[#FFFFFF]/40 hidden md:block">
-                  {loading && posts.length === 0 
-                    ? 'Cargando...' 
+            <div className="flex items-center justify-between mb-2 border-b border-[#1B1B1B]/30 pb-2">
+              <div className="flex flex-col gap-1">
+                <h2 className="font-bold text-lg md:text-2xl lg:text-3xl text-[#1B1B1B]">{title}</h2>
+                <p className="text-sm md:text-base text-[#1B1B1B]/60 hidden md:block">
+                  {loading && posts.length === 0
+                    ? 'Cargando...'
                     : `${posts.length} de ${totalPosts} noticias encontradas`}
                   {searchTerm && ` para "${searchTerm}"`}
                 </p>
               </div>
-              <button
-                onClick={onOpenFilters}
-                className="lg:hidden flex items-center gap-2 bg-[#D92A34] text-white px-3 py-2 rounded-md hover:bg-[#b71724] transition-colors"
-              >
-                <IoFilter className="w-4 h-4" />
-                <span className="text-sm font-semibold">Filtros</span>
-              </button>
             </div>
           </div>
         </div>
@@ -204,9 +196,10 @@ export default function NewsGrid({ filters, onOpenFilters, title = 'Noticias', p
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {Array.from({ length: INITIAL_LOAD }).map((_, index) => (
               <div key={index} className="animate-pulse">
-                <div className="bg-[#FFFFFF]/5 aspect-[16/11] rounded-sm mb-4"></div>
-                <div className="h-4 bg-[#FFFFFF]/5 rounded mb-2"></div>
-                <div className="h-4 bg-[#FFFFFF]/5 rounded w-2/3"></div>
+                <div className="bg-gray-200 aspect-[16/11] rounded-2xl mb-4"></div>
+                <div className="h-3 bg-gray-200 rounded mb-3 w-20"></div>
+                <div className="h-4 bg-gray-200 rounded mb-2"></div>
+                <div className="h-4 bg-gray-200 rounded w-2/3"></div>
               </div>
             ))}
           </div>
@@ -215,8 +208,8 @@ export default function NewsGrid({ filters, onOpenFilters, title = 'Noticias', p
         {posts.length > 0 && (
           <>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-              {posts.map((post) => (
-                <NewsCard key={post.id} post={post} />
+              {posts.map((post, index) => (
+                <NewsCard key={post.id} post={post} priority={index < 6} index={index} />
               ))}
             </div>
 
@@ -224,7 +217,7 @@ export default function NewsGrid({ filters, onOpenFilters, title = 'Noticias', p
               <div className="text-center mt-8">
                 <button
                   onClick={handleLoadMore}
-                  className="text-[#D92A34] border border-[#D92A34] px-4 py-2 rounded-md hover:text-white hover:bg-[#D92A34] transition-colors duration-300"
+                  className="text-[#717171] border border-[#D4D5DD] px-4 py-2 rounded-md hover:scale-105 transition-all duration-300"
                 >
                   Cargar más noticias
                 </button>
@@ -235,7 +228,7 @@ export default function NewsGrid({ filters, onOpenFilters, title = 'Noticias', p
 
         {!loading && posts.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-[#FFFFFF]/60 text-lg">
+            <p className="text-[#1B1B1B] text-lg">
               No se encontraron noticias
               {searchTerm && ` para "${searchTerm}"`}
             </p>

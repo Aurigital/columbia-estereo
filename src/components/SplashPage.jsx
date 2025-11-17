@@ -30,11 +30,10 @@ export default function SplashPage() {
       isAnimating ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
     }`}>
       <div className="text-center">
-        {/* Logo */}
         <div className="mb-8 animate-pulse">
           <Image
-            src="/assets/LogoRadio2.svg"
-            alt="Columbia"
+            src="/assets/Logo.png"
+            alt="Columbia Estéreo"
             width={250}
             height={100}
             className="mx-auto drop-shadow-lg"

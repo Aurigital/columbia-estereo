@@ -141,9 +141,9 @@ export default function Navbar({ backgroundColor = 'bg-[#101010]' }: NavbarProps
         <div className="mx-auto flex h-20 items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
           <div className="flex flex-1 items-center gap-8">
             <Link href="/" className="inline-flex items-center">
-              <img src="/assets/Logo.svg" alt="Columbia Estéreo" className="w-36" />
+              <img src="/assets/Logo.png" alt="Columbia Estéreo" className="w-36" />
             </Link>
-            <div className="hidden lg:flex items-center gap-8 text-sm font-medium text-white/90">
+            <div className="hidden lg:flex items-center gap-8 text-base font-medium text-white/90">
               {menuItems.map((item) => (
                 <Link
                   key={item.key}
@@ -247,7 +247,7 @@ export default function Navbar({ backgroundColor = 'bg-[#101010]' }: NavbarProps
         <div className="flex flex-col h-full">
           <div className="p-6 border-b border-[#141414]">
             <div className="flex items-center justify-between">
-              <img src="/assets/Logo.svg" alt="Columbia Estéreo" className="w-28" />
+              <img src="/assets/Logo.png" alt="Columbia Estéreo" className="w-28" />
               <button
                 onClick={closeMenu}
                 className="rounded-full p-2 text-white/60 transition-colors hover:bg-white/5 hover:text-white"

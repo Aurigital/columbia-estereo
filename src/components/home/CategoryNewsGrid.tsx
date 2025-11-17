@@ -231,7 +231,7 @@ export default function CategoryNewsGrid({
               <div className="grid grid-cols-1 space-y-4">
                 {Array.from({ length: POSTS_PER_PAGE }).map((_, index) => (
                   <div key={index} className="animate-pulse">
-                    <div className="bg-[#FFFFFF]/5 h-32 rounded-sm"></div>
+                    <div className="bg-gray-200 h-32 rounded-2xl"></div>
                   </div>
                 ))}
               </div>
@@ -240,9 +240,10 @@ export default function CategoryNewsGrid({
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   {Array.from({ length: 2 }).map((_, index) => (
                     <div key={index} className="animate-pulse">
-                      <div className="bg-[#FFFFFF]/5 aspect-[16/11] rounded-sm mb-4"></div>
-                      <div className="h-4 bg-[#FFFFFF]/5 rounded mb-2"></div>
-                      <div className="h-4 bg-[#FFFFFF]/5 rounded w-2/3"></div>
+                      <div className="bg-gray-200 aspect-[16/11] rounded-2xl mb-4"></div>
+                      <div className="h-3 bg-gray-200 rounded mb-3 w-24"></div>
+                      <div className="h-4 bg-gray-200 rounded mb-2"></div>
+                      <div className="h-4 bg-gray-200 rounded w-3/4"></div>
                     </div>
                   ))}
                 </div>
@@ -250,9 +251,10 @@ export default function CategoryNewsGrid({
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                   {Array.from({ length: 3 }).map((_, index) => (
                     <div key={index + 2} className="animate-pulse">
-                      <div className="bg-[#FFFFFF]/5 aspect-[16/11] rounded-sm mb-4"></div>
-                      <div className="h-4 bg-[#FFFFFF]/5 rounded mb-2"></div>
-                      <div className="h-4 bg-[#FFFFFF]/5 rounded w-2/3"></div>
+                      <div className="bg-gray-200 aspect-[16/11] rounded-2xl mb-4"></div>
+                      <div className="h-3 bg-gray-200 rounded mb-3 w-20"></div>
+                      <div className="h-4 bg-gray-200 rounded mb-2"></div>
+                      <div className="h-4 bg-gray-200 rounded w-2/3"></div>
                     </div>
                   ))}
                 </div>
@@ -265,8 +267,8 @@ export default function CategoryNewsGrid({
           <>
             {cardType === 'grid' ? (
               <div className="grid grid-cols-1">
-                {posts.map((post) => (
-                  <NewsCard key={post.id} post={post} />
+                {posts.map((post, index) => (
+                  <NewsCard key={post.id} post={post} priority={index < 2} index={index} />
                 ))}
               </div>
             ) : (
@@ -279,16 +281,16 @@ export default function CategoryNewsGrid({
                     <div key={groupIndex} className="space-y-4 sm:space-y-6">
                       {groupPosts.slice(0, 2).length > 0 && (
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 [&_article>div:first-child]:!aspect-[16/9]">
-                          {groupPosts.slice(0, 2).map((post) => (
-                            <NewsCard key={post.id} post={post} />
+                          {groupPosts.slice(0, 2).map((post, idx) => (
+                            <NewsCard key={post.id} post={post} priority={startIndex + idx < 2} index={startIndex + idx} />
                           ))}
                         </div>
                       )}
 
                       {groupPosts.slice(2, 5).length > 0 && (
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-                          {groupPosts.slice(2, 5).map((post) => (
-                            <NewsCard key={post.id} post={post} />
+                          {groupPosts.slice(2, 5).map((post, idx) => (
+                            <NewsCard key={post.id} post={post} priority={false} index={startIndex + idx + 2} />
                           ))}
                         </div>
                       )}

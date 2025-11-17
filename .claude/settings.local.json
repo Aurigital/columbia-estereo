@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npm i:*)"
+      "Bash(npm i:*)",
+      "Bash(npm install:*)",
+      "WebFetch(domain:swiperjs.com)",
+      "Bash(npm uninstall:*)",
+      "mcp__ide__getDiagnostics"
     ],
     "deny": [],
     "ask": []

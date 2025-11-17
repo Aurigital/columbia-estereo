@@ -1,10 +1,9 @@
 'use client';
 import { useEffect } from 'react';
-import dynamic from 'next/dynamic';
 import Navbar from '@/components/Navbar';
+import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
 import ContactForm from '@/components/contact/ContactForm';
-import ContactServices from '@/components/contact/ContactServices';
 
 export default function Contact() {
   useEffect(() => {
@@ -37,10 +36,10 @@ export default function Contact() {
 
   return (
     <>
-      <div className="min-h-screen">
+      <div className="">
         <Navbar />
         <ContactForm />
-        <ContactServices />
+        <CTA />
       </div>
       <Footer />
     </>

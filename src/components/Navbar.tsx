@@ -18,7 +18,7 @@ interface NavbarProps {
   backgroundColor?: string;
 }
 
-export default function Navbar({ backgroundColor = '#101010' }: NavbarProps) {
+export default function Navbar({ backgroundColor = 'bg-[#101010]' }: NavbarProps) {
   const pathname = usePathname();
   const { setSearchTerm } = useSearch();
   const { playRadio } = usePlayer();
@@ -136,10 +136,9 @@ export default function Navbar({ backgroundColor = '#101010' }: NavbarProps) {
   return (
     <>
       <nav
-        className="w-full text-white border-b border-white/5"
-        style={{ backgroundColor }}
+        className={`w-full text-white ${backgroundColor}`}
       >
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto flex h-20 items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
           <div className="flex flex-1 items-center gap-8">
             <Link href="/" className="inline-flex items-center">
               <img src="/assets/Logo.svg" alt="Columbia Estéreo" className="w-36" />
@@ -166,7 +165,7 @@ export default function Navbar({ backgroundColor = '#101010' }: NavbarProps) {
                 className={`flex h-10 w-10 items-center justify-center rounded-full transition-colors ${
                   isSearchOpen
                     ? 'bg-white/15 text-white'
-                    : 'bg-white/5 text-white/70 hover:bg-white/10 hover:text-white'
+                    : 'bg-white/10 text-white/70 hover:bg-white/10 hover:text-white'
                 }`}
                 aria-label="Buscar"
               >
@@ -200,7 +199,7 @@ export default function Navbar({ backgroundColor = '#101010' }: NavbarProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-white/70 transition-colors hover:bg-white/10 hover:text-white"
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white/70 transition-colors hover:bg-white/10 hover:text-white"
                 >
                   {social.icon}
                 </a>

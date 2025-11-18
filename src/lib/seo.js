@@ -29,7 +29,7 @@ export const generatePageMetadata = ({
 }) => {
   const pageTitle = title ? `${title} | ${siteConfig.siteName}` : siteConfig.siteName;
   const pageDescription = description || siteConfig.description;
-  const pageImage = image || `${siteConfig.siteUrl}opengraph-image.jpg`;
+  const pageImage = image || `${siteConfig.siteUrl}favicon.ico`;
   const pageUrl = `${siteConfig.siteUrl}${path.startsWith('/') ? path.slice(1) : path}`;
   const pageKeywords = keywords || siteConfig.keywords;
 
@@ -100,7 +100,7 @@ export const generatePageMetadata = ({
 export const generateNewsSchema = (post) => {
   const author = post._embedded?.author?.[0]?.name || 'Columbia Estéreo';
   const category = post._embedded?.['wp:term']?.[0]?.[0]?.name || 'Noticias';
-  const featuredImage = post._embedded?.['wp:featuredmedia']?.[0]?.source_url || `${siteConfig.siteUrl}opengraph-image.jpg`;
+  const featuredImage = post._embedded?.['wp:featuredmedia']?.[0]?.source_url || `${siteConfig.siteUrl}favicon.ico`;
   
   return {
     '@context': 'https://schema.org',

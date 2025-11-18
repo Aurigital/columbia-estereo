@@ -28,9 +28,9 @@ export const metadata = {
     siteName: 'Columbia Estéreo',
     images: [
       {
-        url: '/opengraph-image.jpg',
-        width: 1200,
-        height: 630,
+        url: '/favicon.ico',
+        width: 512,
+        height: 512,
         alt: 'Columbia Estéreo 92.7 FM - La Romántica',
       },
     ],
@@ -38,11 +38,11 @@ export const metadata = {
     type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
+    card: 'summary',
     title: 'Columbia Estéreo 92.7 FM - La Romántica de Costa Rica',
     description: 'La romántica con lo mejor de los nuevos lanzamientos musicales de la escena latina e hispanohablante.',
     creator: '@927estereo',
-    images: ['/opengraph-image.jpg'],
+    images: ['/favicon.ico'],
   },
   robots: {
     index: true,

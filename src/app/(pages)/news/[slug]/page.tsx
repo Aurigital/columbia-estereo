@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
             publishedTime: null,
             author: null,
             section: null,
-            keywords: 'radio2, noticias costa rica, noticia no encontrada'
+            keywords: 'columbia estereo, noticias costa rica, noticia no encontrada'
         });
     }
     const cleanTitle = post.title.rendered.replace(/<[^>]+>/g, '');
@@ -34,14 +34,14 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
     return generatePageMetadata({
         title: cleanTitle,
-        description: cleanDescription || `Lee la última noticia de ${category || 'Radio2'}: ${cleanTitle}`,
+        description: cleanDescription || `Lee la última noticia de ${category || 'Columbia Estéreo'}: ${cleanTitle}`,
         image: featuredImage,
         path: `/news/${post.slug}`,
         type: 'article',
         publishedTime: post.date,
         author,
         section: category,
-        keywords: `${cleanTitle}, ${category}, radio2, noticias, ${author}`
+        keywords: `${cleanTitle}, ${category}, columbia estereo, 92.7 fm, noticias, ${author}`
     });
 }
 

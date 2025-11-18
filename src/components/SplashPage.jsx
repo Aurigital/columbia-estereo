@@ -40,25 +40,10 @@ export default function SplashPage() {
               alt="Columbia Estéreo"
               width={250}
               height={100}
-              className="mx-auto drop-shadow-2xl animate-pulse"
+              className="mx-auto drop-shadow-2xl"
               priority
             />
           </div>
-        </div>
-
-        <div className="flex items-center justify-center gap-2">
-          <div
-            className="w-2 h-2 bg-gradient-to-r from-[#D90043] to-[#FFB700] rounded-full animate-bounce"
-            style={{ animationDelay: '0ms' }}
-          ></div>
-          <div
-            className="w-2 h-2 bg-gradient-to-r from-[#D90043] to-[#FFB700] rounded-full animate-bounce"
-            style={{ animationDelay: '150ms' }}
-          ></div>
-          <div
-            className="w-2 h-2 bg-gradient-to-r from-[#D90043] to-[#FFB700] rounded-full animate-bounce"
-            style={{ animationDelay: '300ms' }}
-          ></div>
         </div>
       </div>
     </div>

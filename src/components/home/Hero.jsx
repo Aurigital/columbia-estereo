@@ -14,6 +14,12 @@ const programas = [
     nombre: "Mañanas Estéreo",
     autor: "Rosa María Solano",
     horario: "Lunes a Viernes: 7 am - 10 am",
+    imagen: "/assets/homepage/MananasEstereo.png"
+  },
+  {
+    nombre: "De 9 a 11",
+    autor: "Rosa María Solano",
+    horario: "Lunes a viernes - 9 am a 11 am",
     imagen: "/assets/homepage/de9a11.png"
   },
   {

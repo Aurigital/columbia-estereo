@@ -31,6 +31,16 @@ const programs: ProgramCard[] = [
     days: 'Lunes a Viernes',
     schedule: '7 am - 10 am',
     host: 'Rosa María Solano',
+    imageUrl: '/assets/homepage/MananasEstereo.png'
+  },
+  {
+    id: 'de9a11',
+    title: 'De 9 a 11',
+    description:
+      'Acompaña tus mañanas con noticias, novedades, consejos y buena música. Un espacio cargado de buena energía y positividad que ameniza tu día.',
+    days: 'Lunes a viernes',
+    schedule: '9 am - 11 am',
+    host: 'Rosa María Solano',
     imageUrl: '/assets/homepage/de9a11.png'
   },
   {

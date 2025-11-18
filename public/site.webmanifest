@@ -1,17 +1,17 @@
 {
-  "name": "Radio2",
-  "short_name": "Radio2",
-  "description": "La nueva era de la radio digital en Costa Rica. Música, noticias y entretenimiento con una perspectiva moderna y dinámica.",
+  "name": "Columbia Estéreo 92.7 FM",
+  "short_name": "Columbia 92.7",
+  "description": "Columbia Estéreo 92.7 FM - La romántica de Costa Rica. Música latina, romántica y lo mejor de los clásicos.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#F8FBFF",
-  "theme_color": "#1E305F",
+  "background_color": "#fafafa",
+  "theme_color": "#D90043",
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/assets/LogoRadio2.svg",
+      "src": "/assets/Logo.png",
       "sizes": "any",
-      "type": "image/svg+xml",
+      "type": "image/png",
       "purpose": "any maskable"
     },
     {
@@ -25,7 +25,7 @@
       "type": "image/png"
     }
   ],
-  "categories": ["news", "music", "entertainment", "digital media"],
+  "categories": ["news", "music", "entertainment", "radio"],
   "lang": "es-CR",
   "dir": "ltr"
 } 

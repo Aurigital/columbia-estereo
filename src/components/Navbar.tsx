@@ -25,6 +25,9 @@ export default function Navbar({ backgroundColor = 'bg-[#101010]' }: NavbarProps
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [localSearchTerm, setLocalSearchTerm] = useState('');
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const router = useRouter();
   const searchContainerRef = useRef<HTMLDivElement | null>(null);
   const searchInputRef = useRef<HTMLInputElement | null>(null);
@@ -88,6 +91,25 @@ export default function Navbar({ backgroundColor = 'bg-[#101010]' }: NavbarProps
     }
   }, [isSearchOpen]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      setIsScrolled(currentScrollY > 50);
+
+      if (currentScrollY > lastScrollY && currentScrollY > 200) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
     setIsSearchOpen(false);
@@ -135,8 +157,13 @@ export default function Navbar({ backgroundColor = 'bg-[#101010]' }: NavbarProps
 
   return (
     <>
+      {/* Spacer para que el contenido no salte cuando el navbar es fixed */}
+      <div className="h-20" />
+
       <nav
-        className={`w-full text-white ${backgroundColor}`}
+        className={`fixed top-0 left-0 right-0 w-full text-white z-40 transition-all duration-300 ${
+          isScrolled ? 'bg-[#101010] shadow-lg' : backgroundColor
+        } ${isVisible ? 'translate-y-0' : '-translate-y-full'}`}
       >
         <div className="mx-auto flex h-20 items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
           <div className="flex flex-1 items-center gap-8">

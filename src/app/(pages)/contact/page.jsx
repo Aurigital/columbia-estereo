@@ -7,10 +7,10 @@ import ContactForm from '@/components/contact/ContactForm';
 
 export default function Contact() {
   useEffect(() => {
-    document.title = 'Contacto | Radio2 - Ponte en Contacto con Nosotros';
-    
-          const description = 'Contáctanos en Radio2. Envíanos tus comentarios, sugerencias o consultas. Estamos aquí para atenderte y mejorar tu experiencia en nuestra radio costarricense.';
-    
+    document.title = 'Contacto | Columbia Estéreo 92.7 FM - Ponte en Contacto con Nosotros';
+
+          const description = 'Contáctanos en Columbia Estéreo 92.7 FM. Envíanos tus comentarios, sugerencias o consultas. Estamos aquí para atenderte y mejorar tu experiencia en nuestra radio.';
+
     let metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', description);
@@ -20,9 +20,9 @@ export default function Contact() {
       metaDescription.content = description;
       document.head.appendChild(metaDescription);
     }
-    
-          const keywords = 'radio2 contacto, formulario contacto, comunicarse radio2, sugerencias radio, consultas radio costa rica';
-    
+
+          const keywords = 'columbia estereo contacto, 92.7 fm, formulario contacto, comunicarse columbia estereo, sugerencias radio, consultas radio costa rica';
+
     let metaKeywords = document.querySelector('meta[name="keywords"]');
     if (metaKeywords) {
       metaKeywords.setAttribute('content', keywords);

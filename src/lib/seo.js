@@ -1,18 +1,18 @@
 const siteConfig = {
-  siteName: 'Radio2',
-  siteUrl: 'https://radiodev.aurigital.com/',
-  description: 'Radio2 - La nueva era de la radio digital en Costa Rica. Disfruta de música, noticias, deportes y entretenimiento con una experiencia moderna y dinámica. Transmitiendo 24/7 con la mejor calidad y programación innovadora.',
-  keywords: 'radio2, radio digital costa rica, radio online, streaming de música, noticias en vivo, radio moderna, radio interactiva, deportes en vivo, entretenimiento digital, radio streaming, radio 24/7, radio costarricense',
-  author: 'Radio2',
-  twitterHandle: '@radiodos',
-  logo: '/assets/LogoRadio2.svg',
+  siteName: 'Columbia Estéreo',
+  siteUrl: 'https://columbiaestereo.com/',
+  description: 'Columbia Estéreo 92.7 FM - La romántica con lo mejor de los nuevos lanzamientos musicales de la escena latina e hispanohablante. Con más de 30 años acompañando corazones con los clásicos románticos y lo más actual de la música hispana.',
+  keywords: 'columbia estereo, 92.7 fm, radio romantica, musica latina, radio costa rica, radio online, streaming, musica en vivo, musica hispanohablante, radio en vivo, radio costarricense',
+  author: 'Columbia Estéreo',
+  twitterHandle: '@927estereo',
+  logo: '/assets/Logo.png',
   favicon: '/favicon.ico',
-  themeColor: '#1E305F',
-  backgroundColor: '#F8FBFF',
+  themeColor: '#D90043',
+  backgroundColor: '#fafafa',
   social: {
-    facebook: 'https://www.facebook.com/Radio2cr/',
-    instagram: 'https://www.instagram.com/radio2cr/',
-    twitter: 'https://x.com/radiodos',
+    facebook: 'https://www.facebook.com/columbiaestereo/?locale=es_LA',
+    instagram: 'https://www.instagram.com/columbiaestereo/?hl=es',
+    twitter: 'https://x.com/927estereo/',
   }
 };
 
@@ -98,7 +98,7 @@ export const generatePageMetadata = ({
 };
 
 export const generateNewsSchema = (post) => {
-  const author = post._embedded?.author?.[0]?.name || 'Radio2';
+  const author = post._embedded?.author?.[0]?.name || 'Columbia Estéreo';
   const category = post._embedded?.['wp:term']?.[0]?.[0]?.name || 'Noticias';
   const featuredImage = post._embedded?.['wp:featuredmedia']?.[0]?.source_url || `${siteConfig.siteUrl}opengraph-image.jpg`;
   

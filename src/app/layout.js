@@ -6,32 +6,32 @@ import Script from 'next/script'
 import SplashPage from '@/components/SplashPage'  
 
 export const metadata = {
-  title: 'Radio2 - La Nueva Era de la Radio Digital en Costa Rica',
-  description: 'Radio2 - Experimenta la radio del futuro. Música, noticias, deportes y entretenimiento con una perspectiva moderna y dinámica. Transmisión digital 24/7 con la mejor calidad y programación innovadora.',
-  keywords: 'radio2, radio digital, streaming costa rica, radio online, noticias en vivo, radio moderna, radio interactiva, deportes en vivo, entretenimiento digital, radio streaming, radio 24/7',
-  authors: [{ name: 'Radio2' }],
-  creator: 'Radio2',
-  publisher: 'Radio2',
+  title: 'Columbia Estéreo 92.7 FM - La Romántica de Costa Rica',
+  description: 'Columbia Estéreo 92.7 FM - La romántica con lo mejor de los nuevos lanzamientos musicales de la escena latina e hispanohablante. Con más de 30 años acompañando corazones con los clásicos románticos y lo más actual de la música hispana.',
+  keywords: 'columbia estereo, 92.7 fm, radio romantica, musica latina, radio costa rica, radio online, streaming, musica en vivo, musica hispanohablante, radio en vivo',
+  authors: [{ name: 'Columbia Estéreo' }],
+  creator: 'Columbia Estéreo',
+  publisher: 'Columbia Estéreo',
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://radiodev.aurigital.com'),
+  metadataBase: new URL('https://columbiaestereo.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Radio2 - La Nueva Era de la Radio Digital en Costa Rica',
-    description: 'Experimenta la radio del futuro con Radio2. Música, noticias, deportes y entretenimiento con una perspectiva moderna y dinámica. Transmisión digital 24/7.',
-    url: 'https://radiodev.aurigital.com',
-    siteName: 'Radio2',
+    title: 'Columbia Estéreo 92.7 FM - La Romántica de Costa Rica',
+    description: 'La romántica con lo mejor de los nuevos lanzamientos musicales de la escena latina e hispanohablante. Más de 30 años acompañando corazones.',
+    url: 'https://columbiaestereo.com',
+    siteName: 'Columbia Estéreo',
     images: [
       {
         url: '/opengraph-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Radio2 - La Nueva Era de la Radio Digital',
+        alt: 'Columbia Estéreo 92.7 FM - La Romántica',
       },
     ],
     locale: 'es_CR',
@@ -39,9 +39,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Radio2 - La Nueva Era de la Radio Digital en Costa Rica',
-    description: 'Experimenta la radio del futuro. Música, noticias y entretenimiento con una perspectiva moderna y dinámica.',
-    creator: '@radiodos',
+    title: 'Columbia Estéreo 92.7 FM - La Romántica de Costa Rica',
+    description: 'La romántica con lo mejor de los nuevos lanzamientos musicales de la escena latina e hispanohablante.',
+    creator: '@927estereo',
     images: ['/opengraph-image.jpg'],
   },
   robots: {
@@ -67,7 +67,7 @@ export const viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 1,
-  themeColor: '#1E305F',
+  themeColor: '#D90043',
 }
 
 export default function RootLayout({ children }) {
@@ -94,14 +94,14 @@ export default function RootLayout({ children }) {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "RadioStation",
-            "name": "Radio2",
-            "description": "La nueva era de la radio digital en Costa Rica. Música, noticias y entretenimiento con una perspectiva moderna y dinámica.",
-            "url": "https://radiodev.aurigital.com",
-            "logo": "https://radiodev.aurigital.com/assets/LogoRadio2.svg",
+            "name": "Columbia Estéreo",
+            "description": "Columbia Estéreo 92.7 FM - La romántica con lo mejor de los nuevos lanzamientos musicales de la escena latina e hispanohablante. Con más de 30 años acompañando corazones.",
+            "url": "https://columbiaestereo.com",
+            "logo": "https://columbiaestereo.com/assets/Logo.png",
             "sameAs": [
-              "https://www.facebook.com/Radio2cr/",
-              "https://www.instagram.com/radio2cr/",
-              "https://x.com/radiodos"
+              "https://www.facebook.com/columbiaestereo/?locale=es_LA",
+              "https://www.instagram.com/columbiaestereo/?hl=es",
+              "https://x.com/927estereo/"
             ],
             "contactPoint": {
               "@type": "ContactPoint",

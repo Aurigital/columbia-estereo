@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
 
-export const alt = 'Radio2 - La Nueva Era de la Radio Digital'
+export const alt = 'Columbia Estéreo 92.7 FM - La Romántica'
 export const size = {
   width: 1200,
   height: 630,
@@ -21,7 +21,7 @@ export default async function Image() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundColor: '#F8FBFF',
+          backgroundColor: '#fafafa',
           fontSize: 32,
           fontWeight: 600,
         }}
@@ -38,13 +38,13 @@ export default async function Image() {
             style={{
               width: 120,
               height: 120,
-              background: 'linear-gradient(135deg, #1E305F 0%, #2A4484 100%)',
+              background: 'linear-gradient(135deg, #D90043 0%, #FFB700 100%)',
               borderRadius: '50%',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               marginRight: 40,
-              boxShadow: '0 10px 30px rgba(30, 48, 95, 0.2)',
+              boxShadow: '0 10px 30px rgba(217, 0, 67, 0.3)',
             }}
           >
             <span
@@ -54,7 +54,7 @@ export default async function Image() {
                 fontWeight: 700,
               }}
             >
-              R2
+              92.7
             </span>
           </div>
           <div
@@ -65,26 +65,23 @@ export default async function Image() {
           >
             <span
               style={{
-                color: '#1E305F',
+                color: '#000000',
                 fontSize: 64,
                 fontWeight: 700,
                 lineHeight: 1,
-                background: 'linear-gradient(135deg, #1E305F 0%, #2A4484 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
               }}
             >
-              Radio2
+              Columbia Estéreo
             </span>
             <span
               style={{
-                color: '#01A299',
+                color: '#FF3D34',
                 fontSize: 24,
                 fontWeight: 400,
                 marginTop: 8,
               }}
             >
-              La Nueva Era de la Radio Digital
+              La Romántica de Costa Rica
             </span>
           </div>
         </div>
@@ -100,40 +97,29 @@ export default async function Image() {
         >
           <span
             style={{
-              background: 'linear-gradient(135deg, #1E305F 0%, #2A4484 100%)',
+              background: 'linear-gradient(135deg, #D90043 0%, #FFB700 100%)',
               color: 'white',
               padding: '8px 16px',
               borderRadius: 20,
               fontSize: 18,
             }}
           >
-            Música Digital
+            Música Romántica
           </span>
           <span
             style={{
-              backgroundColor: '#D51F2F',
+              backgroundColor: '#FF3D34',
               color: 'white',
               padding: '8px 16px',
               borderRadius: 20,
               fontSize: 18,
             }}
           >
-            Noticias 24/7
+            Noticias
           </span>
           <span
             style={{
-              backgroundColor: '#01A299',
-              color: 'white',
-              padding: '8px 16px',
-              borderRadius: 20,
-              fontSize: 18,
-            }}
-          >
-            Música
-          </span>
-          <span
-            style={{
-              background: 'linear-gradient(135deg, #666 0%, #888 100%)',
+              backgroundColor: '#000000',
               color: 'white',
               padding: '8px 16px',
               borderRadius: 20,

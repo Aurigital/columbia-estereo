@@ -2,7 +2,6 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { 
-  Play, 
   Pause, 
   Volume2, 
   VolumeX, 
@@ -10,6 +9,7 @@ import {
   SkipForward,
   Radio
 } from 'lucide-react';
+import { IoMdPlay } from "react-icons/io";
 import { usePlayer } from '@/lib/PlayerContext';
 import Image from 'next/image';
 
@@ -304,7 +304,7 @@ const RadioPlayer = () => {
             ) : playerState.isPlaying ? (
               <Pause className="w-5 h-5" />
             ) : (
-              <Play className="w-5 h-5 ml-0.5" />
+              <IoMdPlay className="w-5 h-5 ml-0.5" />
             )}
           </button>
 

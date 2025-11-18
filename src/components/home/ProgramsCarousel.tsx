@@ -68,7 +68,7 @@ export default function ProgramsCarousel({
   const swiperRef = useRef<SwiperType | null>(null);
 
   return (
-    <section className="programs-carousel">
+    <section className="programs-carousel" id="shows">
       <div className="max-w-7xl mx-auto px-4 sm:px-8 py-8">
         <div className="flex flex-col gap-4 mb-6">
           <div className="flex items-center justify-between border-b border-[#1B1B1B]/30 pb-2">

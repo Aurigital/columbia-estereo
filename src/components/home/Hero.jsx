@@ -46,7 +46,7 @@ const Hero = () => {
     <section className="relative h-[95vh] w-full overflow-hidden bg-black mb-8">
       <div className="absolute z-20 w-full">
         <Navbar
-          backgroundColor="bg-black/5"
+          backgroundColor="bg-transparent"
         />
       </div>
 

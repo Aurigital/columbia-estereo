@@ -41,7 +41,7 @@ function NewsCard({ post, priority = false, index = 0 }: NewsCardProps) {
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=="
           />
           <div className="absolute bottom-0 right-0 bg-[#fafafa] rounded-tl-3xl items-center justify-center p-3">
-            <span className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-[#FF7A00] via-[#FF3D34] to-[#FF0F8C] text-white shadow-[0_12px_30px_-12px_rgba(255,61,98,0.75)] transition-all duration-500 group-hover:scale-110 opacity-90 group-hover:opacity-100">
+            <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-[#FF7A00] via-[#FF3D34] to-[#FF0F8C] text-white shadow-[0_12px_30px_-12px_rgba(255,61,98,0.75)] transition-all duration-500 group-hover:scale-110 opacity-90 group-hover:opacity-100">
               <FiArrowUpRight className="h-6 w-6" />
             </span>
           </div>

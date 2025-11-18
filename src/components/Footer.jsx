@@ -20,9 +20,8 @@ const Footer = () => {
                                 Información
                             </h5>
                             <ul className="space-y-3 text-sm text-[#FFFFFF]/60">
-                                <li><Link href="/about-us" className="hover:text-[#DF4B54] transition-colors">Sobre Nosotros</Link></li>
-                                <li><Link href="/shows" className="hover:text-[#DF4B54] transition-colors">Programas</Link></li>
-                                <li><Link href="/live" className="hover:text-[#DF4B54] transition-colors">En Vivo</Link></li>
+                                <li><Link href="/#shows" className="hover:text-[#DF4B54] transition-colors">Programas</Link></li>
+                                <li><Link href="/news" className="hover:text-[#DF4B54] transition-colors">Noticias</Link></li>
                             </ul>
                         </div>
 

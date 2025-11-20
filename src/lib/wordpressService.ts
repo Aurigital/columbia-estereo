@@ -1,6 +1,6 @@
 import { WordPressPost, WordPressCategory, WordPressTag, PostsResponse, CategoriesResponse, TagsResponse, GetPostsOptions } from '@/types/wordpress';
 
-const WORDPRESS_API_BASE = 'https://radiodos.aurigital.com/wp-json/wp/v2';
+const WORDPRESS_API_BASE = 'https://estereo.aurigital.com/wp-json/wp/v2';
 
 class WordPressService {
   static async getPosts(options: GetPostsOptions = {}): Promise<PostsResponse> {

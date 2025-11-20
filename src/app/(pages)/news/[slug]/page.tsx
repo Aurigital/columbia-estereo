@@ -26,8 +26,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
             keywords: 'columbia estereo, noticias costa rica, noticia no encontrada'
         });
     }
-    const cleanTitle = post.title.rendered.replace(/<[^>]+>/g, '');
-    const cleanDescription = post.excerpt.rendered.replace(/<[^>]+>/g, '').trim();
+    const cleanTitle = decodeHtmlEntities(post.title.rendered.replace(/<[^>]+>/g, ''));
+    const cleanDescription = decodeHtmlEntities(post.excerpt.rendered.replace(/<[^>]+>/g, '').trim());
     const featuredImage = WordPressService.getFeaturedImage(post);
     const author = WordPressService.getAuthor(post);
     const category = post._embedded?.['wp:term']?.[0]?.[0]?.name;
@@ -43,6 +43,21 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         section: category,
         keywords: `${cleanTitle}, ${category}, columbia estereo, 92.7 fm, noticias, ${author}`
     });
+}
+
+function decodeHtmlEntities(html: string): string {
+    return html
+        .replace(/&#8220;/g, '"')
+        .replace(/&#8221;/g, '"')
+        .replace(/&#8216;/g, "'")
+        .replace(/&#8217;/g, "'")
+        .replace(/&#8211;/g, '–')
+        .replace(/&#8212;/g, '—')
+        .replace(/&quot;/g, '"')
+        .replace(/&apos;/g, "'")
+        .replace(/&amp;/g, '&')
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>');
 }
 
 function addHeadingIds(html: string) {
@@ -79,7 +94,8 @@ export default async function NewsDetailPage({ params }: { params: { slug: strin
 
     const featuredImage = WordPressService.getFeaturedImage(post) || '/placeholder-news.jpg';
 
-    const contentWithoutFeaturedImage = removeFeaturedImageFromContent(post.content.rendered, featuredImage);
+    const decodedContent = decodeHtmlEntities(post.content.rendered);
+    const contentWithoutFeaturedImage = removeFeaturedImageFromContent(decodedContent, featuredImage);
     const htmlWithIds = addHeadingIds(contentWithoutFeaturedImage);
 
     const mainCategory = post._embedded?.['wp:term']?.[0]?.[0];
@@ -92,7 +108,7 @@ export default async function NewsDetailPage({ params }: { params: { slug: strin
 
     const author = WordPressService.getAuthor(post);
     const formatDate = WordPressService.formatDate;
-    const cleanTitle = post.title.rendered.replace(/<[^>]+>/g, '');
+    const cleanTitle = decodeHtmlEntities(post.title.rendered.replace(/<[^>]+>/g, ''));
 
     const newsSchema = generateNewsSchema(post);
 
@@ -120,7 +136,7 @@ export default async function NewsDetailPage({ params }: { params: { slug: strin
                                     <img
                                         src={featuredImage}
                                         alt={cleanTitle}
-                                        className="w-full max-h-[400px] object-cover rounded-2xl mx-auto"
+                                        className="w-full max-h-[460px] object-cover object-[70%_30%] rounded-2xl mx-auto"
                                     />
                                 </div>
                                 <div className="flex flex-row gap-8">

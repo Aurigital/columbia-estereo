@@ -75,7 +75,7 @@ export default function RootLayout({ children }) {
     <html lang="es-CR" className="overflow-x-hidden">
       <head>
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-ZY4PPFPEJK"
+          src="https://www.googletagmanager.com/gtag/js?id=G-ECE367HRCW"
           strategy="afterInteractive"
         />
         <Script id="gtag-init" strategy="afterInteractive">
@@ -83,7 +83,7 @@ export default function RootLayout({ children }) {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-ZY4PPFPEJK');
+            gtag('config', 'G-ECE367HRCW');
           `}
         </Script>
         <Script

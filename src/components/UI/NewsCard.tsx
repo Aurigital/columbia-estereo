@@ -39,6 +39,7 @@ function NewsCard({ post, priority = false, index = 0 }: NewsCardProps) {
             priority={priority}
             placeholder="blur"
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mN8/5+hHgAHggJ/PchI7wAAAABJRU5ErkJggg=="
+            quality={75}
           />
 
 

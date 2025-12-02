@@ -3,6 +3,7 @@ import Footer from '@/components/Footer';
 import RelatedNewsGrid from '@/components/news/RelatedNewsGrid';
 import { notFound } from 'next/navigation';
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
 import WordPressService from '@/lib/wordpressService';
 import { WordPressPost } from '@/types/wordpress';
 import { generatePageMetadata, generateNewsSchema } from '@/lib/seo';
@@ -115,36 +116,40 @@ export default async function NewsDetailPage({ params }: { params: { slug: strin
     return (
         <>
             <JsonLd data={newsSchema} />
-            <div className="min-h-screen font-jost">
+            <div className="min-h-screen font-jost overflow-x-hidden">
                 <Navbar />
                 <div>
                     <div className="max-w-7xl mx-auto relative my-4 px-4 sm:px-8 py-8">
                         <div className="flex flex-col lg:flex-row gap-6">
-                            <div className="flex-1 order-2 lg:order-1 items-center justify-center text-center">
+                            <div className="flex-1 order-2 lg:order-1 items-center justify-center text-center w-full">
                                 {mainCategory && (
-                                    <span className="inline-block mb-4 px-4 py-2 rounded-full border-2 border-[#4A4A4A]/35 text-[#000000]/60 font-medium text-xs font-normal">
+                                    <span className="px-4 py-2 rounded-full border-2 border-[#4A4A4A]/35 text-[#000000]/60 font-medium text-xs font-normal">
                                         {mainCategory.name}
                                     </span>
                                 )}
-                                <h1 className="font-lexend text-sm md:text-lg lg:text-3xl font-semibold text-black mb-2">
+                                <h1 className="font-lexend text-sm md:text-lg lg:text-3xl font-semibold text-black my-4 break-words">
                                     {cleanTitle}
                                 </h1>
                                 <div className="mb-6 text-black/80 text-sm">
                                     {author} <span className="text-black/40">- {formatDate(post.date)}</span>
                                 </div>
-                                <div className="mb-8">
-                                    <img
+                                <div className="mb-8 relative w-full h-[460px]">
+                                    <Image
                                         src={featuredImage}
                                         alt={cleanTitle}
-                                        className="w-full max-h-[460px] object-cover object-[70%_30%] rounded-2xl mx-auto"
+                                        fill
+                                        className="object-cover object-[70%_30%] rounded-2xl"
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+                                        priority
+                                        quality={85}
                                     />
                                 </div>
-                                <div className="flex flex-row gap-8">
-                                    <div className="hidden lg:block text-left w-full max-w-xs">
+                                <div className="flex flex-row gap-8 w-full">
+                                    <div className="hidden lg:block text-left w-full max-w-xs flex-shrink-0">
                                         <NewsSectionsSidebar html={htmlWithIds} />
                                     </div>
                                     <article
-                                        className="prose prose-invert mx-auto text-left text-black/60"
+                                        className="prose prose-invert mx-auto text-left text-black/60 max-w-full break-words overflow-wrap-anywhere"
                                         dangerouslySetInnerHTML={{ __html: htmlWithIds }}
                                     />
                                 </div>

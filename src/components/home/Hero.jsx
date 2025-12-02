@@ -14,25 +14,29 @@ const programas = [
     nombre: "Mañanas Estéreo",
     autor: "Rosa María Solano",
     horario: "Lunes a Viernes: 7 am - 10 am",
-    imagen: "/assets/homepage/MananasEstereo.png"
+    imagen: "/assets/homepage/MananasEstereo.png",
+    imagenMobile: "/assets/homepage/mananasestereoHeroMobile.png"
   },
   {
     nombre: "De 9 a 11",
     autor: "Rosa María Solano",
     horario: "Lunes a viernes - 9 am a 11 am",
-    imagen: "/assets/homepage/de9a11.png"
+    imagen: "/assets/homepage/de9a11.png",
+    imagenMobile: "/assets/homepage/de9a11-mobile.png"
   },
   {
     nombre: "Música para Dos",
     autor: "Juan Carlos Ugalde",
     horario: "Lunes a Viernes: 4:30 pm - 7pm",
-    imagen: "/assets/homepage/musicaParaDos.png"
+    imagen: "/assets/homepage/musicaParaDos.png",
+    imagenMobile: "/assets/homepage/musicaParaDos-mobile.png"
   },
   {
     nombre: "Éxitos Estéreo",
     autor: "Rosa María Solano",
     horario: "Sábados: 12pm - 2pm",
-    imagen: "/assets/homepage/exitosEstereo.png"
+    imagen: "/assets/homepage/exitosEstereo.png",
+    imagenMobile: "/assets/homepage/exitosEstereoHeroMobile.png"
   }
 ];
 
@@ -82,7 +86,15 @@ const Hero = () => {
                   src={programa.imagen}
                   alt={programa.nombre}
                   fill
-                  className="object-cover object-center"
+                  className="object-cover object-center hidden sm:block"
+                  sizes="100vw"
+                  priority={index === 0}
+                />
+                <Image
+                  src={programa.imagenMobile}
+                  alt={programa.nombre}
+                  fill
+                  className="object-cover object-center block sm:hidden"
                   sizes="100vw"
                   priority={index === 0}
                 />

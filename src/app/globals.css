@@ -137,6 +137,32 @@ body {
   margin: 1.5em 0;
 }
 
+.prose iframe {
+  max-width: 100% !important;
+  width: 100% !important;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
+.prose video {
+  max-width: 100% !important;
+  width: 100% !important;
+  height: auto;
+}
+
+.prose figure {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 1.5em 0;
+  overflow: hidden;
+}
+
+.prose figure iframe,
+.prose figure video {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
 .prose h1, .prose .wp-block-heading.h1 {
   font-size: 2.5rem;
   line-height: 1.1;
@@ -207,6 +233,20 @@ body {
   padding: 1rem;
   border-radius: 0.5rem;
   overflow-x: auto;
+  max-width: 100%;
+}
+
+.prose table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  word-wrap: break-word;
+}
+
+.prose * {
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .prose hr {
@@ -219,9 +259,38 @@ body {
   .breadcrumb {
     font-size: 0.75rem;
   }
-  
+
   .breadcrumb__item:not(:last-child)::after {
     margin: 0 0.375rem;
+  }
+
+  .prose h1, .prose .wp-block-heading.h1 {
+    font-size: 1.5rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .prose h2, .prose .wp-block-heading.h2 {
+    font-size: 1.25rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .prose h3, .prose .wp-block-heading.h3 {
+    font-size: 1.1rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .prose h4, .prose .wp-block-heading.h4 {
+    font-size: 1rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .prose p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 }
 

@@ -26,22 +26,6 @@ function NewsContent({ title }: { title: string }) {
   const [isMobileFiltersOpen, setIsMobileFiltersOpen] = useState(false);
 
   useEffect(() => {
-    document.title = 'Noticias | Columbia Estéreo 92.7 FM - Últimas Noticias de Costa Rica';
-
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content',
-        'Descubre las últimas noticias y actualidad de Costa Rica en Columbia Estéreo 92.7 FM. Mantente informado con nuestras noticias de música, entretenimiento y más.'
-      );
-    } else {
-      const meta = document.createElement('meta');
-      meta.name = 'description';
-              meta.content = 'Descubre las últimas noticias y actualidad de Costa Rica en Columbia Estéreo 92.7 FM. Mantente informado con nuestras noticias de música, entretenimiento y más.';
-      document.head.appendChild(meta);
-    }
-  }, []);
-
-  useEffect(() => {
     const nextSearch = searchParams?.get('search') ?? '';
     setSearchTerm(nextSearch);
   }, [searchParams, setSearchTerm]);

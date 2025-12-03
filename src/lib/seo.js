@@ -13,6 +13,7 @@ const siteConfig = {
     facebook: 'https://www.facebook.com/columbiaestereo/?locale=es_LA',
     instagram: 'https://www.instagram.com/columbiaestereo/?hl=es',
     twitter: 'https://x.com/927estereo/',
+    youtube: 'https://www.youtube.com/@ColumbiaDigital',
   }
 };
 
@@ -29,7 +30,7 @@ export const generatePageMetadata = ({
 }) => {
   const pageTitle = title ? `${title} | ${siteConfig.siteName}` : siteConfig.siteName;
   const pageDescription = description || siteConfig.description;
-  const pageImage = image || `${siteConfig.siteUrl}favicon.ico`;
+  const pageImage = image || `${siteConfig.siteUrl}assets/Logo.png`;
   const pageUrl = `${siteConfig.siteUrl}${path.startsWith('/') ? path.slice(1) : path}`;
   const pageKeywords = keywords || siteConfig.keywords;
 
@@ -100,7 +101,7 @@ export const generatePageMetadata = ({
 export const generateNewsSchema = (post) => {
   const author = post._embedded?.author?.[0]?.name || 'Columbia Estéreo';
   const category = post._embedded?.['wp:term']?.[0]?.[0]?.name || 'Noticias';
-  const featuredImage = post._embedded?.['wp:featuredmedia']?.[0]?.source_url || `${siteConfig.siteUrl}favicon.ico`;
+  const featuredImage = post._embedded?.['wp:featuredmedia']?.[0]?.source_url || `${siteConfig.siteUrl}assets/Logo.png`;
   
   return {
     '@context': 'https://schema.org',
@@ -137,13 +138,13 @@ export const generateOrganizationSchema = () => {
     '@type': 'Organization',
     name: siteConfig.siteName,
     url: siteConfig.siteUrl,
-    logo: `${siteConfig.siteUrl}${siteConfig.logo}`,
+    logo: `${siteConfig.siteUrl.replace(/\/$/, '')}${siteConfig.logo}`,
     description: siteConfig.description,
     sameAs: [
       siteConfig.social.facebook,
       siteConfig.social.instagram,
-      siteConfig.social.youtube,
       siteConfig.social.twitter,
+      siteConfig.social.youtube,
     ],
     contactPoint: {
       '@type': 'ContactPoint',

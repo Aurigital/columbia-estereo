@@ -28,9 +28,9 @@ export const metadata = {
     siteName: 'Columbia Estéreo',
     images: [
       {
-        url: '/favicon.ico',
-        width: 512,
-        height: 512,
+        url: '/assets/Logo.png',
+        width: 1200,
+        height: 630,
         alt: 'Columbia Estéreo 92.7 FM - La Romántica',
       },
     ],
@@ -38,11 +38,11 @@ export const metadata = {
     type: 'website',
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: 'Columbia Estéreo 92.7 FM - La Romántica de Costa Rica',
     description: 'La romántica con lo mejor de los nuevos lanzamientos musicales de la escena latina e hispanohablante.',
     creator: '@927estereo',
-    images: ['/favicon.ico'],
+    images: ['/assets/Logo.png'],
   },
   robots: {
     index: true,
@@ -101,7 +101,8 @@ export default function RootLayout({ children }) {
             "sameAs": [
               "https://www.facebook.com/columbiaestereo/?locale=es_LA",
               "https://www.instagram.com/columbiaestereo/?hl=es",
-              "https://x.com/927estereo/"
+              "https://x.com/927estereo/",
+              "https://www.youtube.com/@ColumbiaDigital"
             ],
             "contactPoint": {
               "@type": "ContactPoint",

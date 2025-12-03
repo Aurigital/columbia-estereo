@@ -36,6 +36,7 @@ export default function Navbar({ backgroundColor = 'bg-[#101010]' }: NavbarProps
     { key: 'inicio', label: 'Inicio', href: '/' },
     { key: 'programas', label: 'Programas', href: '/#shows' },
     { key: 'noticias', label: 'Noticias', href: '/news' },
+    { key: 'contacto', label: 'Contacto', href: '/contact' },
   ];
 
   const socialLinks: { key: string; label: string; href: string; icon: React.ReactNode }[] = [

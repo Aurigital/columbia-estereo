@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const Footer = () => {
     return (
-        <footer className="text-white py-12 lg:py-24 bg-[#0C0C0C]">
+        <footer className="text-white pt-12 pb-20 lg:py-24 bg-[#0C0C0C]">
             <div className="w-full mx-auto max-w-7xl px-4 sm:px-8 container">
                 <div className="flex flex-col lg:flex-row gap-4 justify-between items-start mb-12">
                     <div className="mb-8 md:mb-0 max-w-xs mx-auto lg:mx-0 text-center lg:text-left flex flex-col items-center lg:items-start">
@@ -49,6 +49,10 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
+                <a href="https://aurigital.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 mt-4 bg-[#FFFFFF]/10 px-3 py-1.5 rounded-full hover:opacity-70 transition-opacity">
+                    <span className="text-[#FFFFFF]/60 text-xs font-medium">Creado por Aurigital</span>
+                    <img src="/isotipo.avif" alt="Aurigital" className="h-5 w-5" />
+                </a>
             </div>
         </footer>
     );

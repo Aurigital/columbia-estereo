@@ -29,19 +29,9 @@ const programs: ProgramCard[] = [
     description:
       'Acompaña tus mañanas con noticias, novedades, consejos y buena música. Un espacio cargado de buena energía y positividad que ameniza tu día.',
     days: 'Lunes a Viernes',
-    schedule: '7 am - 10 am',
+    schedule: '8 am - 10 am',
     host: 'Rosa María Solano',
     imageUrl: '/assets/homepage/MananasEstereo.png'
-  },
-  {
-    id: 'de9a11',
-    title: 'De 9 a 11',
-    description:
-      'Acompaña tus mañanas con noticias, novedades, consejos y buena música. Un espacio cargado de buena energía y positividad que ameniza tu día.',
-    days: 'Lunes a viernes',
-    schedule: '9 am - 11 am',
-    host: 'Rosa María Solano',
-    imageUrl: '/assets/homepage/de9a11.png'
   },
   {
     id: 'tarde',
@@ -59,7 +49,7 @@ const programs: ProgramCard[] = [
     description:
       'Los mejores éxitos del momento y de siempre. Tu compañía perfecta para disfrutar el fin de semana con la mejor música.',
     days: 'Sábados',
-    schedule: '12 pm - 2 pm',
+    schedule: '12 pm - 1 pm',
     host: 'Rosa María Solano',
     imageUrl: '/assets/homepage/exitosEstereo.png'
   }

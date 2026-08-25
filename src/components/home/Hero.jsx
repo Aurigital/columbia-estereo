@@ -13,16 +13,9 @@ const programas = [
   {
     nombre: "Mañanas Estéreo",
     autor: "Rosa María Solano",
-    horario: "Lunes a Viernes: 7 am - 10 am",
+    horario: "Lunes a Viernes: 8 am - 10 am",
     imagen: "/assets/homepage/MananasEstereo.png",
     imagenMobile: "/assets/homepage/mananasestereoHeroMobile.png"
-  },
-  {
-    nombre: "De 9 a 11",
-    autor: "Rosa María Solano",
-    horario: "Lunes a viernes - 9 am a 11 am",
-    imagen: "/assets/homepage/de9a11.png",
-    imagenMobile: "/assets/homepage/de9a11-mobile.png"
   },
   {
     nombre: "Música para Dos",
@@ -34,7 +27,7 @@ const programas = [
   {
     nombre: "Éxitos Estéreo",
     autor: "Rosa María Solano",
-    horario: "Sábados: 12pm - 2pm",
+    horario: "Sábados: 12 pm - 1 pm",
     imagen: "/assets/homepage/exitosEstereo.png",
     imagenMobile: "/assets/homepage/exitosEstereoHeroMobile.png"
   }

@@ -1,7 +1,7 @@
 const siteConfig = {
   siteName: 'Columbia Estéreo',
   siteUrl: 'https://columbiaestereo.com/',
-  description: 'Columbia Estéreo 92.7 FM - La romántica con lo mejor de los nuevos lanzamientos musicales de la escena latina e hispanohablante. Con más de 30 años acompañando corazones con los clásicos románticos y lo más actual de la música hispana.',
+  description: 'Columbia Estéreo - Una emisora costarricense de Grupo Columbia dedicada a las canciones que acompañan historias, romances, recuerdos y momentos inolvidables.',
   keywords: 'columbia estereo, 92.7 fm, radio romantica, musica latina, radio costa rica, radio online, streaming, musica en vivo, musica hispanohablante, radio en vivo, radio costarricense',
   author: 'Columbia Estéreo',
   twitterHandle: '@927estereo',

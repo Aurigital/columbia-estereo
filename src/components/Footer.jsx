@@ -22,6 +22,7 @@ const Footer = () => {
                             <ul className="space-y-3 text-sm text-[#FFFFFF]/60">
                                 <li><Link href="/#shows" className="hover:text-[#DF4B54] transition-colors">Programas</Link></li>
                                 <li><Link href="/news" className="hover:text-[#DF4B54] transition-colors">Noticias</Link></li>
+                                <li><a href="https://grupocolumbia.co.cr/media-kit" target="_blank" rel="noopener noreferrer" className="hover:text-[#DF4B54] transition-colors">Media Kit</a></li>
                             </ul>
                         </div>
 

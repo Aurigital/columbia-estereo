@@ -4,7 +4,6 @@ import { PlayerProvider } from '@/lib/PlayerContext'
 import RadioPlayer from '@/components/RadioPlayer'
 import Script from 'next/script'
 import SplashPage from '@/components/SplashPage'  
-import { GoogleTagManager } from '@next/third-parties/google'
 
 export const metadata = {
   title: 'Columbia Estéreo 92.7 FM - La Romántica de Costa Rica',
@@ -74,7 +73,6 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="es-CR" className="overflow-x-hidden">
-      <GoogleTagManager gtmId="GTM-MZ4F938X" />
       <head>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-ECE367HRCW"
